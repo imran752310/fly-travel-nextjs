@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaCalendarWeek, FaMap } from 'react-icons/fa'
-import { FaUserGroup } from 'react-icons/fa6'
 
 const SearchBox = () => {
   return (
