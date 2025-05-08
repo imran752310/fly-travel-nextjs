@@ -1,7 +1,6 @@
 import React from 'react'
 import { FaStar } from 'react-icons/fa'
-// import { ReviewSlider } from './ReviewSlider'
-
+import Image from 'next/image'
 const Review = () => {
   return (
     <div className='pt-20 pb-20 flex items-center justify-center flex-col bg-[#13357b] '>
@@ -32,6 +31,8 @@ const Review = () => {
             {/* Slider  */}
             <div className='overflow-hidden'>
                  {/* <ReviewSlider /> */}
+                 <Image src={'/images/review-img.PNG'} alt="review"width={500} height={500} className="overflow-hidden h-full w-full transition-all duration-300 object-cover group-hover:scale-110" />
+                       
             </div>
         </div>
     </div>
