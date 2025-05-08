@@ -1,18 +1,13 @@
-"use client"
+"use client";
 import { navLinks } from "@/constant/constant";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { HiBars3BottomRight } from "react-icons/hi2";
-import { TbAirBalloon } from "react-icons/tb";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showNav, setShowNav] = useState(false)
-const handNavShow =()=> setShowNav(true);
-const handleCloseNav = () => setShowNav(false)
-
 
   return (
     <div>
@@ -49,34 +44,30 @@ const handleCloseNav = () => setShowNav(false)
               </button>
 
               {/* burger Menu  */}
-              <HiBars3BottomRight   
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="w-8 h-8 cursor-pointer text-white lg:hidden" />
+              <HiBars3BottomRight
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="w-8 h-8 cursor-pointer text-white lg:hidden"
+              />
             </div>
             {isMobileMenuOpen && (
-          
+              <div className="fixed inset-0 transform transition-all duration-500 z-[1002]  w-full h-screen">
+                <div className="text-white  fixed justify-center flex flex-col h-[400px] rounded-b-lg transform transition-all duration-500 delay-300 w-[90%] sm:w-[80%] bg-blue-900   space-y-6 z-[1050]">
+                  {navLinks.map((link) => (
+                    <Link key={link.id} href={link.url}>
+                      <p className="text-white w-fit text-[18px] ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px] ">
+                        {link.label}
+                      </p>
+                    </Link>
+                  ))}
 
-            <div className="fixed inset-0 transform transition-all duration-500 z-[1002]  w-full h-screen">
-      
-             
-              <div className="text-white  fixed justify-center flex flex-col h-[400px] rounded-b-lg transform transition-all duration-500 delay-300 w-[90%] sm:w-[80%] bg-blue-900   space-y-6 z-[1050]">
-                {navLinks.map((link) => (
-                  <Link key={link.id} href={link.url}>
-                    <p className="text-white w-fit text-[18px] ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px] ">
-                      {link.label}
-                    </p>
-                  </Link>
-                ))}
-
-                {/* close button  */}
-                <CgClose
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="absolute cursor-pointer top-[0.7rem] right-[1rem] sm:w-8 w-6 h-6 text-white "
-                />
+                  {/* close button  */}
+                  <CgClose
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    className="absolute cursor-pointer top-[0.7rem] right-[1rem] sm:w-8 w-6 h-6 text-white "
+                  />
+                </div>
               </div>
-            </div>
-            )
-            }
-
+            )}
           </div>
         </div>
       </div>
