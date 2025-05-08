@@ -17,7 +17,7 @@ const Hero = () => {
         className="w-full h-full  object-cover"
       />
       {/* text content  */}
-      <div className="absolute z-[100]  top-[60%] left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]">
+      <div className="absolute z-[100]  top-[55%] left-[50%] w-full h-full translate-x-[-50%] translate-y-[-50%]">
         <div className="flex items-center justify-center flex-col w-full h-full">
           <div data-aos="fade-up">
             <h1 className="text-[25px] mb-4 md:mb-0 text-center md:text-[35px] lg:text-[45px] tracking-[0.7rem] text-white font-bold uppercase">
